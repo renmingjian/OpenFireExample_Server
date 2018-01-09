@@ -10,6 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
+    <description>  登录     </description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.LoginServlet</servlet-class>
@@ -19,6 +20,7 @@
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <description>  注册     </description>
     <display-name>RegisterServlet</display-name>
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.RegisterServlet</servlet-class>
@@ -37,6 +39,7 @@
     <url-pattern>/BaseHttpServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <description>  聊天记录     </description>
     <display-name>ChatRecordServlet</display-name>
     <servlet-name>ChatRecordServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.QueryChatRecordServlet</servlet-class>
@@ -46,6 +49,7 @@
     <url-pattern>/chatRecord</url-pattern>
   </servlet-mapping>
   <servlet>
+    <description>  添加聊天记录     </description>
     <display-name>AddChatRecordServlet</display-name>
     <servlet-name>AddChatRecordServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.AddChatRecordServlet</servlet-class>
@@ -55,6 +59,7 @@
     <url-pattern>/addChatRecord</url-pattern>
   </servlet-mapping>
   <servlet>
+    <description>  获取聊天人用户信息     </description>
     <display-name>ChatUserInfoServlet</display-name>
     <servlet-name>ChatUserInfoServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.ChatUserInfoServlet</servlet-class>
@@ -64,6 +69,7 @@
     <url-pattern>/chatUserInfo</url-pattern>
   </servlet-mapping>
   <servlet>
+    <description>  添加好友     </description>
     <display-name>AddFriendServlet</display-name>
     <servlet-name>AddFriendServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.AddFriendServlet</servlet-class>
@@ -73,7 +79,7 @@
     <url-pattern>/addFriend</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
+    <description>	我的好友	</description>
     <display-name>MyFriendsServlet</display-name>
     <servlet-name>MyFriendsServlet</servlet-name>
     <servlet-class>com.ccim.servlet.servlet.MyFriendsServlet</servlet-class>
@@ -81,5 +87,15 @@
   <servlet-mapping>
     <servlet-name>MyFriendsServlet</servlet-name>
     <url-pattern>/myFriends</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>ServletOutputStream的测试</description>
+    <display-name>OutPutStreamServlet</display-name>
+    <servlet-name>OutPutStreamServlet</servlet-name>
+    <servlet-class>com.ccim.servlet.servlet.test.OutPutStreamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OutPutStreamServlet</servlet-name>
+    <url-pattern>/utPutStreamTest</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.Session;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DataSourceUtils {
@@ -27,6 +30,18 @@ public class DataSourceUtils {
 		if (con == null) {
 			con = dataSource.getConnection();
 			tl.set(con);
+		}
+		
+		try {
+			JSch jsch = new JSch();
+			Session session = jsch.getSession("root", "39.106.120.166", 22);
+			session.setPassword("Jj769091349");
+            session.setConfig("StrictHostKeyChecking", "no");
+            session.connect();
+            session.sendKeepAliveMsg();
+//			int assinged_port = session.setPortForwardingL("192.168.0.101", 5555, "192.168.0.101", 3306);// 端口映射 转发
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return con;
 	}
