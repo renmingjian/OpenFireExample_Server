@@ -5,10 +5,8 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.dbutils.QueryRunner;
-
 import com.ccim.servlet.bean.ServletData;
-import com.ccim.servlet.utils.DataSourceUtils;
+import com.ccim.servlet.utils.Utils;
 
 /**
  * 注册接口
@@ -18,7 +16,6 @@ import com.ccim.servlet.utils.DataSourceUtils;
  */
 public class RegisterServlet extends BaseHttpServlet {
 
-	
 	@Override
 	public void handleGet(HttpServletRequest request, HttpServletResponse response) {
 		final ServletData data = getData();
@@ -29,6 +26,12 @@ public class RegisterServlet extends BaseHttpServlet {
 			final String email = request.getParameter("email");
 			final String jid = request.getParameter("jid");
 			System.out.println("接收到的数据：" + username + "--" + password);
+			
+			if(Utils.isNull(username) || Utils.isNull(password)) {
+				data.setCode(202).setMsg("用户名或者密码为空");
+				doWrite(response);
+				return;
+			}
 
 			// 2.对数据库进行操作
 			String sqlRegist = "insert into ofuser(username, plainPassword, email, jid) values(?, ?, ?, ?)";

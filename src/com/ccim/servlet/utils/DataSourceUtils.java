@@ -35,7 +35,7 @@ public class DataSourceUtils {
 		try {
 			JSch jsch = new JSch();
 			Session session = jsch.getSession("root", "39.106.120.166", 22);
-			session.setPassword("Jj769091349");
+			session.setPassword("123456");
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
             session.sendKeepAliveMsg();
