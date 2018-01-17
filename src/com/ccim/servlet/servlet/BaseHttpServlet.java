@@ -70,6 +70,7 @@ public abstract class BaseHttpServlet extends HttpServlet {
 	/**
 	 * 返回数据:
 	 * 如果返回的数据中有文件，则使用该方法返回数据
+	 * （如果是只有App使用，则使用不到该方法，因为App下载文件只需要一个链接，如果是网页端使用，则可能使用到该方法）
 	 */
 	private void doOutPutStrean(HttpServletResponse response) {
 		

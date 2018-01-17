@@ -4,8 +4,10 @@
 		<property name="user">root</property>
 		<property name="password">123456</property>
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<!-- 下面注释部分为链接本地电脑上的数据库 -->
 		<!-- <property name="jdbcUrl">jdbc:mysql:///service</property> -->
-		<property name="jdbcUrl">jdbc:mysql://39.106.120.166:3306/service</property>
+		<!-- 下面链接的是阿里云服务器中的数据库，加上了编码方式的制定，否则插入数据库时数据是乱码 -->
+		<property name="jdbcUrl">jdbc:mysql://39.106.120.166:3306/service?useUnicode=true&amp;characterEncoding=UTF-8</property>
 
 	</default-config>
 </c3p0-config> 

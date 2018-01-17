@@ -26,7 +26,7 @@ public class LoginServlet extends BaseHttpServlet {
 			final String password = request.getParameter("password");
 
 			// 查询数据库获取结果
-			final String sql = "select * from	ofuser where username=? and plainPassword=?";
+			final String sql = "select * from ofuser where username=? and plainPassword=?";
 			User user = null;
 			try {
 				user = getRunner().query(sql, new BeanHandler<User>(User.class), username, password);
@@ -37,10 +37,6 @@ public class LoginServlet extends BaseHttpServlet {
 			if (user == null) {
 				data.setMsg("该用户不存在！");
 			} else {
-				// 自己拼接json字符串
-				// String json = "{\"id\":\"" + user.getId() + "\"" + ",\"username\":\"" +
-				// user.getUsername() + "\""
-				// + ",\"plainPassword\":\"" + user.getPlainPassword() + "\"}";
 				data.setCode(200).setMsg("登录成功").setType("login").setData(user);
 			}
 			// 向response中写入数据

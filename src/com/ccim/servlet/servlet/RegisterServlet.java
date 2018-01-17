@@ -34,7 +34,7 @@ public class RegisterServlet extends BaseHttpServlet {
 			}
 
 			// 2.对数据库进行操作
-			String sqlRegist = "insert into ofuser(username, plainPassword, email, jid) values(?, ?, ?, ?)";
+			final String sqlRegist = "insert into ofuser(username, plainPassword, email, jid) values(?, ?, ?, ?)";
 			int count = getRunner().update(sqlRegist, username, password, email, jid);
 			if (count > 0) {
 				data.setCode(200).setMsg("注册成功").setType("register");

@@ -98,4 +98,24 @@
     <servlet-name>OutPutStreamServlet</servlet-name>
     <url-pattern>/utPutStreamTest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description>创建群组--保存创建的群组信息</description>
+    <display-name>GroupCreateServlet</display-name>
+    <servlet-name>GroupCreateServlet</servlet-name>
+    <servlet-class>com.ccim.servlet.servlet.GroupCreateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GroupCreateServlet</servlet-name>
+    <url-pattern>/groupCreate</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>上传文件</description>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.ccim.servlet.servlet.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GroupCreateServlet</servlet-name>
+    <url-pattern>/uploadFile</url-pattern>
+  </servlet-mapping>
 </web-app>
