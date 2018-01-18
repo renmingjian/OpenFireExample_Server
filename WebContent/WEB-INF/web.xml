@@ -115,7 +115,7 @@
     <servlet-class>com.ccim.servlet.servlet.UploadServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>GroupCreateServlet</servlet-name>
+    <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/uploadFile</url-pattern>
   </servlet-mapping>
 </web-app>
