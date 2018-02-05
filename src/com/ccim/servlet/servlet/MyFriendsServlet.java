@@ -38,7 +38,7 @@ public class MyFriendsServlet extends BaseHttpServlet {
 				User user = null;
 				for(Friends friend : friendList) {
 					friend_id = friend.getFriend_jid();
-					sqlFriendInfo = "select * from ofuser where friend_id=?";
+					sqlFriendInfo = "select * from user where friend_id=?";
 					user = runner.query(sqlFriendInfo, 
 							new BeanHandler<User>(User.class), friend_id);
 					if(user != null) {

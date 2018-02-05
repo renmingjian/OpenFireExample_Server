@@ -59,7 +59,7 @@ public class QueryChatRecordServlet extends BaseHttpServlet {
 		}
 		
 		// 查询用户数据
-		final String sqlQueryUser = "select * from ofuser where id=?";
+		final String sqlQueryUser = "select * from user where id=?";
 		User userFrom = null;
 		User userTo = null;
 		final ChatRecord record = new ChatRecord();
@@ -81,7 +81,7 @@ public class QueryChatRecordServlet extends BaseHttpServlet {
 		}
 		
 		// 查询聊天数据
-		final String sqlQueryRecord = "selcet * from ofrecord where from_uid=? and to_uid=?";
+		final String sqlQueryRecord = "selcet * from singlerecord where from_uid=? and to_uid=?";
 		// 聊天记录集合
 	    List<ChatRecord> recordList = new ArrayList<>();
 		try {

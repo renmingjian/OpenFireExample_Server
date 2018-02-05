@@ -38,7 +38,7 @@ public class ChatUserInfoServlet extends BaseHttpServlet {
 		if(arrayUids != null) {
 			int arrayLength = arrayUids.length;
 			for (int i = 0; i < arrayLength; i++) {
-				sql = "select * from ofuser where jid=?";
+				sql = "select * from user where jid=?";
 				try {
 					user = getRunner().query(sql, new BeanHandler<User>(User.class), arrayUids[i]);
 					if (user != null) {

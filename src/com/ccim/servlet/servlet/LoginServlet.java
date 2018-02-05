@@ -26,7 +26,7 @@ public class LoginServlet extends BaseHttpServlet {
 			final String password = request.getParameter("password");
 
 			// 查询数据库获取结果
-			final String sql = "select * from ofuser where username=? and plainPassword=?";
+			final String sql = "select * from user where username=? and plainPassword=?";
 			User user = null;
 			try {
 				user = getRunner().query(sql, new BeanHandler<User>(User.class), username, password);

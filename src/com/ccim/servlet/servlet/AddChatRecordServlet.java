@@ -63,7 +63,7 @@ public class AddChatRecordServlet extends BaseHttpServlet {
 			send_time = DateUtils.newDate();
 		}
 		
-		final String sqlAddRecord = "insert into ofrecord(msg, msg_type, from_uid, to_uid, send_time) values(?, ?, ?, ?, ?)";
+		final String sqlAddRecord = "insert into singlerecord(msg, msg_type, from_uid, to_uid, send_time) values(?, ?, ?, ?, ?)";
 		try {
 			int row = getRunner().update(sqlAddRecord, msg, msg_type, from_uid, to_uid, send_time);
 			if(row > 0) {
